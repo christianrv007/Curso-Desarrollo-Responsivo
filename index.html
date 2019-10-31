@@ -7,6 +7,36 @@
 
         <script>
             
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(googleMapIt,gestionaErrores);
+            }else{
+                alert('Prueba con otro browser, el actual no tiene soporte de geocalizacion');
+            }
+
+            function googleMapIt(p){
+                var detalle='latitud: '+  p.coords.latitude+ 'longitud: '+ p.coords.longitude
+                console.log('Te encuentras aproximadamente ahora mismo en las coordenadas: '+detalle);
+                var map = 'http://maps.google.com/maps?&z=15&output=embed&ll='+p.coords.latitude + ','+p.coords.longitude;
+
+                document.getElementById("geoMap").src= map;
+
+            }
+
+            function gestionaErrores (e){
+                if(e.code == 0){
+                    alert("Error desconocido");
+                }
+                if(e.code == 1){
+                    alert("No has permitido compartir tu ubicacion");
+                }
+                if(e.code == 2){
+                    alert("No es posible leer tu ubicacion, quizas no esta esto en un sitio seguro");
+                }
+                if(e.code == 3){
+                    alert("Timeout... tiempo de espera agotado");
+                }
+            }
+
             function almacena (){
                 var texto= document.getElementById("datos").value;
                 localStorage.setItem("datos",texto);
@@ -247,7 +277,10 @@
                         <p>Me estoy animando! Yeeeeei!</p>
                     </div>
                 </article>
-
+                <article>
+                        <h3>Probando Geolocation con Maps</h3>
+                        <iframe id="geoMap" width="300" height="500" framborder="no" src=""></iframe>
+                    </article>
         </section>
         <footer>
             <h5 itemscope itemtype="https://schema.org/Person"> Copyright 2019 por <span itemprop="givenName">Christian Reyes </span>, <span itemprop="jobTitle"> Analista de sistemas  </span>en <span itemprop="worksFor"> Banco de México </span>, hijo de <span itemprop="parent">Jose Reyes</span></h5>
