@@ -159,7 +159,7 @@
             <details>
                 <summary> El top de la semana</summary>
                 <ul>
-                        <li> Canción 1</li>
+                        <li> <a href="ejemplos2.html"> Canción 1 </a></li>
                         <li> Canción 2</li>
                         <li> Canción 3</li>
                 </ul>
@@ -173,11 +173,111 @@
         </aside>
         <section>
             <h2> Bienvenido</h2>
-            <article>
-                <h3>Probando device orientation</h3>
-                <div id="esfera"></div>
+            
+                      
+<article>
+        <h3>Lo mas visto</h3>
+        <h4>Publicado el <time datetime="2019-10-30"> 30 de Octubre de 2019 </time></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non maximus velit, venenatis pellentesque orci. Nam nec neque sodales, euismod augue ac, euismod risus. Integer tempor, tortor sit amet euismod pellentesque, arcu urna tristique diam, nec venenatis magna eros vel metus. Aenean a est id tortor viverra volutpat ut quis diam. Vestibulum fringilla urna nec condimentum rhoncus. Sed fermentum cursus mi, in condimentum eros hendrerit sed. Nam mi massa, lobortis a leo eu, lobortis accumsan nisi. Praesent sagittis turpis non enim rhoncus elementum. Donec cursus vehicula ex, vitae vehicula augue elementum at. Maecenas et imperdiet nunc. Etiam sollicitudin placerat nulla, in lobortis odio auctor quis. Praesent sagittis ultricies sem, quis pretium turpis. Donec interdum vulputate pharetra. Suspendisse potenti. Duis maximus vulputate tincidunt.</p>
+    </article>
+    <article>
+            <h3>Probando nuevos inputs types</h3>
+            <form method="POST" action="#">
+                Nombre: <input type="text" placeholder="Por ej. Juan Pérez"> <br>
+                Correo: <input type="email" placeholder="Por ej. juan@dominio.com"> <br>
+                URL de LinkedIn: <input type="url" placeholder="Por ej. http://linkedIn.com/user"> <br>
+                Edad: <input type="number" min="18" max="60" value="20" step="2"> <br>
+                Ingresa tu nivel de inglés: <input type="range"  min="0" max="100" step="10" value="50" > <br>
+                Fecha de nacimiento: <input type="date"> <br>
+                Mes de vacaciones: <input type="month"> <br>
+                Semana de vacaciones extra: <input type="week"> <br>
+                Hora de entrada al trabajo: <input type="time"> <br>
+                Color de camiseta : <input type="color"><br>
+                Contraseña: <input type="password"><br>
+                Telefono: <input type="tel">  <br>
+                Que quieres buscar: <input trype="search"> <br>
+                Nivel de estudios: <input type="text" list="estudios" required> <br>
+
+                    <datalist id="estudios">
+                        <option label="Bach">Bachillerato o preparatoria</option>
+                        <option label="Lic">Licenciatura</option>
+                        <option label="Ing">Ingenieria</option>
+                        <option label="Mto">Maestria</option>
+                        <option label="Dr">Doctorado</option>
+                    </datalist>
+                <input type="submit" value="Enviar datos">
+            </form>
+        </article>
+        <article>
+            <h3>Probando audio y video </h3> 
+            <h4>Prueba de audio</h4>
+                <audio controls loop>
+                    <source src="multimedia/son2.mp3" type="audio/mp3">
+                </audio>
+            <h4>Prueba de video</h4>
+            <video width="300" controls poster="images/poster.jpg">
+                <source src="multimedia/video.mp4"  type="video/mp4">
+                <source src="multimedia/video.ogv"  type="video/ogv">
+                <source src="multimedia/video.webm" type="video/webm">
+            </video>
+        </article>
+        <article>
+            <h3>Probando formas basicas con SVG</h3>
+            <svg width="300" height="550" xmlns="http://www.w3.org/2000/svg">
+                <line x1="50" y1="50" x2="300" y2="450" style="stroke:yellow; stroke-width:7;" />
+                <circle cx="100" cy="150" r="80" fill="red"/> 
+                <rect width="200" height="100" fill="blue"/> 
+                <ellipse cx="250" cy="290" rx="250" ry="100" fill="green"/> 
+            </svg>
+        </article>
+        <article>
+            <h3>Probando video enmascarado por SVG</h3>
+            <video id="videoMask" width="300" controls poster="images/poster.jpg">
+                <source src="multimedia/video.mp4" type="video/mp4">
+                <source src="multimedia/video.ogv" type="video/ogv">
+                <source src="multimedia/video.webm" type="video/webm">
+            </video>
+        </article>
+        <article>
+            <h3>Probando fromas básicas de dibujo con Canvas</h3>
+            <canvas width="300" height="550" id="lienzo">
+                Este canvas no es visible para tu browser, intenta en otro
+            </canvas>
+        </article>
+
+        <article>
+            <h3>Probando animación con canvas</h3>
+            <canvas width="300" height="550" id="miLienzo">
+                Este canvas no es visible para tu browser, intenta en otro
+            </canvas>
+        </article>
+        <article>
+            <h3>Probando almacenamiento local</h3>
+            
+            <h4>Prueba de local storage</h4>
+            Ingresa un dato en el siguiente input: 
+            <input type="text" id="datos" placeholder="Mi dato a guardar" autofocus> <br>
+            <input type="button" value="Guardar dato" onclick="almacena();"> 
+            <input type="button" value="Traer el dato de vuelta" onclick="obtiene();"> 
+            <input type="button" value="Borrar dato" onclick="borra();">
+
+            <h4>Prueba session storage</h4>
+            Ingresa un dato en el siguiente input: 
+            <input type="text" id="datos_session" placeholder="Mi dato a guardar" autofocus> <br>
+            <input type="button" value="Guardar dato" onclick="almacena_sesion();"> 
+            <input type="button" value="Traer el dato de vuelta" onclick="obtiene_sesion();"> 
+            <input type="button" value="Borrar dato" onclick="borra_sesion();">
+        </article>
+        <article>
+            <h3>Probando animación con CS3</h3>
+            <div id="cuadroAnimado" >
+                <p>Me estoy animando! Yeeeeei!</p>
+            </div>
+        </article>
+        <article>
+                <h3>Probando Geolocation con Maps</h3>
+                <iframe id="geoMap" width="300" height="500" framborder="no" src=""></iframe>
             </article>
-           
         </section>
         <footer>
             <h5 itemscope itemtype="https://schema.org/Person"> Copyright 2019 por <span itemprop="givenName">Christian Reyes </span>, <span itemprop="jobTitle"> Analista de sistemas  </span>en <span itemprop="worksFor"> Banco de México </span>, hijo de <span itemprop="parent">Jose Reyes</span></h5>
