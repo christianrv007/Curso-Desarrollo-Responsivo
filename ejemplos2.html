@@ -75,6 +75,10 @@
                 if(esfera.velocity.y  != 0)
                     esfera.style.transform = "scale("+(esfera.velocity.y+esfera.velocity.x)*.05+")";
 
+                if(esfera.velocity.y  > 30)
+                    esfera.style.backgroundColor = "blue";
+                else
+                    esfera.style.backgroundColor = "red";
                 requestAnimationFrame(update);
 
             }
