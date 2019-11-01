@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            body, html{
+                height:100% !important;
+                margin:0px !important;
+                font-size:15px !important;
+                color:#777 !important;
+            }
+
+            .fondoimg_1, .fondoimg_2, .fondoimg_3{
+                position: relative;
+                opacity: 0.65;
+                background-size:cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            .fondoimg_1{
+                background-image: url("images/wall1.jpg");
+                min-height:100% ;
+            }
+
+            .fondoimg_2{
+                background-image: url("images/wall2.jpg");
+                min-height:400px ;
+            }
+
+            .fondoimg_3{
+                background-image: url("images/wall3.jpg");
+                min-height:100% ;
+            }
+
+            .texto{
+                position:absolute;
+                left:0px;
+                top:50%;
+                width:100%;
+                text-align: center;
+                color:#000;
+            }
+
+            .texto span.border{
+                background-color: #111;
+                color:white;
+                padding:18px;
+                font-size:25px;
+            }
+
+            #contenedor1, #contenedor2, #contenedor3{
+                color:#777;
+                background-color: white;
+                text-align: center;
+                padding:50px 80px;
+            }
+
+            .cuadrito{
+                position:absolute;
+                background-color: gray;
+                left:50px;
+                width:150px;
+                height:150px;
+                margin:5px;
+                font-size: 20px;
+                color:white;
+                z-index:1000000;
+            }
+
+        </style>
+
+       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <script>
+            $(document).on("pagecreate",function(){
+                $(".cuadrito").on("swiperight",function(){
+                    $(".cuadrito").animate({"left":"+=40px"},"slow");
+                })
+                $(".cuadrito").on("swipeleft",function(){
+                    $(".cuadrito").animate({"left":"-=40px"},"slow");
+                })
+                $(".cuadrito").on("taphold",function(){
+                    $(".cuadrito").animate({"width":"+=20px","height":"+=20px"},"slow");
+                })
+                $(".cuadrito").on("tap",function(){
+                    $(".cuadrito").animate({"width":"-=20px","height":"-=20px"},"slow");
+                })
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="fondoimg_1">
+            <div class="texto">
+                <span class="border">BIENVENIDO DE NUEVO!</span>
+            </div>
+        </div>
+        <div id="cotenedor1">
+                <h3 style="text-align:center;"> Este es un demo del Parallax</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non maximus velit, venenatis pellentesque orci. Nam nec neque sodales, euismod augue ac, euismod risus. Integer tempor, tortor sit amet euismod pellentesque, arcu urna tristique diam, nec venenatis magna eros vel metus. Aenean a est id tortor viverra volutpat ut quis diam. Vestibulum fringilla urna nec condimentum rhoncus. Sed fermentum cursus mi, in condimentum eros hendrerit sed. Nam mi massa, lobortis a leo eu, lobortis accumsan nisi. Praesent sagittis turpis non enim rhoncus elementum. Donec cursus vehicula ex, vitae vehicula augue elementum at. Maecenas et imperdiet nunc. Etiam sollicitudin placerat nulla, in lobortis odio auctor quis. Praesent sagittis ultricies sem, quis pretium turpis. Donec interdum vulputate pharetra. Suspendisse potenti. Duis maximus vulputate tincidunt.</p>
+                <div class="cuadrito">
+                    <p>Tocame baby!</p>
+                </div>
+        </div>
+        <div class="fondoimg_2">
+            <div class="texto">
+                <span class="border" style="background-color:transparent; font-size: 25px; color:yellow">SIGUE HACIENDO SCROLL...</span>
+            </div>
+        </div>
+        <div style="position:relative">
+            <div id="contenedor2">
+                <p>Sigue asi muchacho...</p>
+            </div>
+        </div>
+        <div class="fondoimg_3">
+            <div class="texto">
+                <span class="border" style="background-color:transparent; font-size: 25px; color:yellow">SIGUE HACIENDO SCROLL UNA VEZ MAS ...</span>
+            </div>
+        </div>
+        <div style="position:relative">
+            <div id="contenedor3">
+                <p>Ya casi llegas...</p>
+            </div>
+        </div>
+        <div class="fondoimg_1">
+            <div class="texto">
+                <span class="border">YA LLEGASTE!</span>
+            </div>
+        </div>
+    </body>
+</html>
+
